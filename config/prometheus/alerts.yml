@@ -1,0 +1,22 @@
+groups:
+  - name: observability-lab
+    rules:
+      - alert: HighRequestErrorRate
+        expr: >-
+          sum(rate(http_requests_total{status_class=~"5.."}[5m]))
+          /
+          clamp_min(sum(rate(http_requests_total[5m])), 0.001) > 0.02
+        for: 2m
+        labels:
+          severity: page
+        annotations:
+          summary: Request error rate exceeds two percent
+      - alert: HighP95Latency
+        expr: >-
+          histogram_quantile(0.95,
+            sum by (le, service) (rate(http_request_duration_seconds_bucket[5m]))) > 0.5
+        for: 5m
+        labels:
+          severity: ticket
+        annotations:
+          summary: P95 latency exceeds the 500 ms objective
