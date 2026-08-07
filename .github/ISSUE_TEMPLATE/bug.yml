@@ -1,0 +1,19 @@
+name: Bug report
+description: Report a reproducible telemetry or application defect
+title: 'bug: '
+labels: [bug]
+body:
+  - type: textarea
+    id: symptom
+    attributes:
+      label: Symptom
+      description: Which signal, service, query, or dashboard is incorrect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Include commands and the smallest safe diagnostic output.
+    validations:
+      required: true
