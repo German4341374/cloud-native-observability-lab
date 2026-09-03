@@ -80,7 +80,7 @@ the Dockerfile, repository security, and the running telemetry stack.
 - Alert rules are evaluated, but no external notification channel is configured.
 - SLO thresholds are examples, not claims based on production traffic.
 
-## Interview talking points
+## Design notes
 
 - Metrics answer how much; traces answer where; logs answer what happened.
 - Route templates are safe labels, while raw URLs and IDs create cardinality explosions.
