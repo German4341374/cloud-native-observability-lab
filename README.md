@@ -4,9 +4,11 @@
 ![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-OTLP-7B61FF)
 ![Grafana](https://img.shields.io/badge/Grafana-metrics%20logs%20traces-F46800)
 
-A fully local observability platform that correlates metrics, logs, and distributed traces across
-two instrumented TypeScript services. Controlled success, latency, HTTP error, and timeout scenarios
-make it possible to investigate real signals instead of looking at an empty dashboard.
+Two small TypeScript services, a few dashboards, and some failures you can trigger on purpose.
+Make a request slow down, return an error, or time out, then follow what happened in Grafana.
+
+Everything runs locally. OpenTelemetry connects the traces, logs, and metrics so you can
+look at the same request from different angles.
 
 ## Architecture
 
